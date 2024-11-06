@@ -1,0 +1,54 @@
+.easter-egg-section {
+  position: relative;
+  padding-top: 150px !important;
+  padding-bottom: 30px !important;
+  background-image: var(--section-background-color) !important;
+  color: white !important;
+}
+
+.easter-egg-content {
+  text-align: center;
+  padding: 50px;
+}
+
+.binary-container {
+  position: relative;
+  margin: 50px auto;
+  padding: 40px 20px 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  max-width: 800px;
+  text-align: left;
+}
+
+.binary-text {
+  margin: 0;
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: #c770f0;
+  user-select: all;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.button-group {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.copy-button, .decrypt-button {
+  background-color: #623686 !important;
+  border-color: #623686 !important;
+  font-size: 14px;
+  padding: 5px 15px;
+  z-index: 2;
+}
+
+.copy-button:hover, .decrypt-button:hover {
+  background-color: #6d20c5d7 !important;
+  border-color: #6d20c5d7 !important;
+} 
