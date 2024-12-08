@@ -38,17 +38,17 @@ function Home2() {
               </i>
               <br />
               <br />
-              Whenever possible, I also apply my passion for developing products
-              with <b className="purple">Node.js</b> and
+              Whenever possible, I research about 
+               <b className="purple">cybersecurity</b> and how to secure
               <i>
                 <b className="purple">
                   {" "}
-                  Modern Javascript Library and Frameworks
+                  Modern AI models 
                 </b>
               </i>
               &nbsp; like
               <i>
-                <b className="purple"> React.js and Next.js</b>
+                <b className="purple"> LLMs, RAGs, and Agents.</b>
               </i>
             </p>
           </Col>
