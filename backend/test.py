@@ -1,9 +1,11 @@
 import requests
 
 url = "http://127.0.0.1:8000/resume"
+url = "http://orcl-vm.taaha.in:8000/resume"
+
 data = {
     "name": "Taaha Multani",
-    "email": "taahamultanii@gmail.com",
+    "email": "devtaaha@gmail.com",
     "location" : {"city":"mumbai"},
     "role" : "Admin"
 }
