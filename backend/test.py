@@ -1,7 +1,7 @@
 import requests
 
 url = "http://127.0.0.1:8000/resume"
-url = "http://orcl-vm.taaha.in:8000/resume"
+url = "https://api.taaha.in/resume"
 
 data = {
     "name": "Taaha Multani",
