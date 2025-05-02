@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taaha Multani</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #fafbfc;
+            color: #222;
+            line-height: 1.6;
+        }
+        /* Sticky header styles */
+        header {
+            position: fixed; /* Floating header */
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            z-index: 1000;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px; /* Wider layout */
+            margin: 0 auto;
+            padding: 1rem 3rem;
+        }
+        .navbar h1 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #2d3748;
+        }
+        nav a {
+            color: #2d3748;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #3182ce;
+        }
+        main {
+            max-width: 1400px; /* Wider layout */
+            margin: 4.5rem auto 2rem auto; /* Add top margin for fixed header */
+            padding: 0 3rem;
+        }
+        section {
+            margin-bottom: 3rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+            color: #222;
+            margin-bottom: 1rem;
+        }
+        .about {
+            font-size: 1.1rem;
+        }
+        /* Projects section as two columns */
+        .projects-columns {
+            display: flex;
+            gap: 3rem;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .projects-col {
+            flex: 1 1 0;
+            min-width: 320px;
+        }
+        .projects-col h3 {
+            font-size: 1.15rem;
+            color: #222;
+            margin-bottom: 0.3rem;
+        }
+        .projects-col .section-link {
+            color: #2b50a1;
+            text-decoration: none;
+            font-size: 1rem;
+            margin-left: 0.5rem;
+            transition: color 0.2s;
+        }
+        .projects-col .section-link:hover {
+            color: #3182ce;
+        }
+        .projects-list, .papers-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .projects-list li, .papers-list li {
+            margin-bottom: 0.7rem;
+            font-size: 1rem;
+        }
+        .projects-list li span.date {
+            color: #888;
+            font-family: "Fira Mono", "Consolas", monospace;
+            font-size: 0.98rem;
+            margin-right: 0.5rem;
+            letter-spacing: 0.03em;
+        }
+        .projects-list li a, .papers-list li a {
+            color: #1746d4;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .projects-list li a:hover, .papers-list li a:hover {
+            color: #3182ce;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+        }
+        .contact-form label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .contact-form input, .contact-form textarea {
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .contact-form button {
+            background: #3182ce;
+            color: #fff;
+            border: none;
+            padding: 0.7rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .contact-form button:hover {
+            background: #2563eb;
+        }
+        .footer {
+            text-align: center;
+            color: #888;
+            font-size: 0.95rem;
+            margin: 2rem 0 1rem 0;
+        }
+        @media (max-width: 900px) {
+            .projects-columns {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .navbar, main {
+                padding: 1rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .navbar, main {
+                padding: 0.5rem;
+            }
+            nav a {
+                margin-left: 1rem;
+            }
+        }
+        /* About section two-column layout */
+        .about-container {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+            margin-bottom: 2.5rem;
+        }
+        .about-left {
+            flex: 2;
+        }
+        .about-right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .about-heading {
+            font-size: 2.8rem;
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #222;
+        }
+        .about-subheading {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #c53030;
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            margin-bottom: 1.2rem;
+        }
+        .about-description {
+            font-size: 1.08rem;
+            margin-bottom: 1.2rem;
+        }
+        .about-description a {
+            color: #1746d4;
+            text-decoration: none;
+        }
+        .about-description a:hover {
+            text-decoration: underline;
+        }
+        .about-socials {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+        .about-social-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1.5px solid #bbb;
+            border-radius: 8px;
+            padding: 0.5rem 1.1rem;
+            background: #fff;
+            color: #222;
+            font-size: 1.05rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: border 0.2s, box-shadow 0.2s;
+        }
+        .about-social-btn:hover {
+            border: 1.5px solid #3182ce;
+            box-shadow: 0 2px 8px rgba(49,130,206,0.08);
+            color: #1746d4;
+        }
+        .about-img-placeholder, .about-img {
+            width: 460px;
+            height: 460px;
+            border-radius: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #aaa;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            background: #f3f3f3;
+            overflow: hidden;
+        }
+        .about-img {
+            background: #fff;
+            padding: 0;
+        }
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 2rem;
+            display: block;
+        }
+        .header-hr {
+            border: none;
+            border-top: 2px solid #e2e8f0;
+            margin: 0;
+            margin-bottom: 2.5rem;
+        }
+        .header-spacer {
+            height: 0.1rem;
+            /* height: 1px; */
+        }
+        @media (max-width: 1100px) {
+            .about-container {
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: flex-start;
+            }
+            .about-img-placeholder, .about-img {
+                width: 320px;
+                height: 320px;
+            }
+        }
+        /* Bulleted list for cleaner look in Recent and Programming profiles */
+        .bulleted-list {
+            list-style: disc inside;
+            padding-left: 0.5rem;
+            margin-top: 1rem;
+        }
+        .bulleted-list li {
+            margin-bottom: 0;
+            padding-left: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header>
+        <div class="navbar">
+            <h1>Taaha Multani</h1>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#projects">Talks</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <hr class="header-hr" />
+    <div class="header-spacer"></div>
+    <main>
+        <!-- About Section -->
+        <section id="about">
+            <div class="about-container">
+                <!-- Left: Text Content -->
+                <div class="about-left">
+                    <div class="about-heading">Hey, I am Taaha</div>
+                    <div class="about-subheading">passionate, curious, and pragmatic</div>
+                    <div class="about-description">
+                        I am a software engineer passionate about building scalable systems, re-inventing the wheel, and reducing operational inefficiencies. Currently at <a href="https://netcorecloud.com/">Netcore Cloud</a> I'm modernizing legacy infrastructure to improve performance and resiliancy.<br><br>
+                        I was one of founding engineers for <a href="https://play.google.com/store/apps/details?id=com.somaiya.steps&hl=en-IN&pli=1">S.T.E.P.S</a> - a mobile application for digitalization of sugercane plots. I was incharge of backend, frontend, database and data; where internet was unreliable and intuitive implementations were used, tailored for field usability and scale. Prior to that, I freelanced for multiple clients, including developing staggered algorithmic trading strategies, building a trading platform for a quant founder, and automating high-resolution data collection for <a href="5reels.com">5reels</a>.
+                        
+                        I had interned as a backend developer at <a href="https://geniobits.com/">Genibits</a> where I had worked with architecting asynchronous processing pipelines and background execution frameworks to optimize resource-intensive operations. At <a href="https://xtremetechnologies.in/">XtremeTechnologies</a>, I contributed to a prototype aimed at optimizing long-voyage fuel efficiency projected to reduce consumption by up to 40% - by leveraging real-time <a href="https://www.noaa.gov/">NOAA's</a> weather data with predictive adjustments during transit. 
+                        <br><br>
+                        In June 2024, I graduated with a B.Tech in Computer Science, earning a CGPA of 9.74/10, along with an Honors specialization in AI/ML and a Minor in Cybersecurity. 
+                        As a side gig, I'm working on building an automated OCR based highlight generator <a href="http://hgen.taaha.in/">(HGen)</a>, working alongside twitch streamers and gaming orgs. 
+                      
+                        <br><br>
+                       
+                        I stay curious and keep interesting things posted on <a href="https://medium.com/@taahamultani">medium.com</a>.
+                    </div>
+                    <div class="about-socials">
+                        <a class="about-social-btn" href="https://www.linkedin.com/in/taahamultani/" target="_blank" rel="noopener"><span>💼</span> LinkedIn</a>
+                        <a class="about-social-btn" href="https://github.com/taahamultani" target="_blank" rel="noopener"><span>💻</span> GitHub</a>
+                        <a class="about-social-btn" href="https://medium.com/@taahamultani" target="_blank" rel="noopener"><span>✍️</span> Medium</a>
+                    </div>
+                </div>
+                <!-- Right: Image Placeholder -->
+                <div class="about-right">
+                    <div class="about-img">
+                        <img src="C:/Users/taaha/Desktop/Development/DSA/website/pfp.png" alt="Profile picture" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="projects-columns">
+                <!-- Recent blog posts column -->
+                <div class="projects-col">
+                    <h2>Recent</h2>
+                    <div>Things I have done or shared recently.</div>
+                    <ul class="projects-list bulleted-list">
+                        <li><span class="date">Dec 23, 2023</span>: Won hackathon (same place, again) &middot; <a href="https://www.linkedin.com/feed/update/urn:li:activity:7150127620653826048">Techfest 2023</a></li>
+                        <li><span class="date">Aug 20, 2023</span>: A happy client &middot; <a href="C:/Users/taaha/Desktop/Development/DSA/website/rl.jpg">Recieved Recommendation Letter</a></li>
+                        <li><span class="date">Apr 02, 2023</span>: Project &middot; <a href="https://devfolio.co/projects/nirbhaya&middot;be&middot;fearless&middot;34cc">Nirbhaya : Be Fearless</a></li>
+                        <li><span class="date">Feb 12, 2023</span>: Project &middot; <a href="https://github.com/viren-joshi/plant-it">Plant-it</a></li>
+                        <li><span class="date">Dec 18, 2022</span>: Won hackathon &middot; <a href="C:/Users/taaha/Desktop/Development/DSA/website/iitb-hackathon.png">Techfest 2022</a> &middot; <a href="https://github.com/taahamultani/APIGen">Github</a></li>
+                        <li><span class="date">Oct 23, 2021</span>: Organized an event &middot; <a href="https://codechef.com/TCDG2021">The Code Dungeon @Codechef</a></li>
+                        <li><span class="date">Jun 27, 2021</span>: Contest &middot; <a href="https://www.codechef.com/rankings/START5C?itemsPerPage=100&order=asc&page=1&search=taaha_m&sortBy=rank">Ranked 351 at Codechef's START5C</a></li>
+                    </ul>
+                </div>
+                <!-- Recent papers column -->
+                <div class="projects-col">
+                    <h2>Programming profiles</h2>
+                    <div>Links to my programming and coding profiles.</div>
+                    <ul class="papers-list bulleted-list">
+                        <li><a href="https://leetcode.com/u/taahamultani/" target="_blank" rel="noopener">Leetcode </a></li>
+                        <li><a href="https://www.codechef.com/users/taaham/" target="_blank" rel="noopener">Codechef </a></li>
+                        <li><a href="https://codeforces.com/profile/taahamultani" target="_blank" rel="noopener">Codeforces </a></li>
+                        <li><a href=#" target="_blank" rel="noopener">Hackerrank </a></li>
+                        <li><a href="#" target="_blank" rel="noopener">Tryhackme</a></li>
+                        <li><a href="#" target="_blank" rel="noopener">Hackthebox</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="about-description">
+                Feel free to reach out to me at <a href="mailto:tm@taaha.in">tm@taaha.in</a>
+            </div>
+        </section>
+    </main>
+    <div class="footer">
+        &copy; 2025 Taaha Multani. All rights reserved. &middot; Inspiration: <a href="https://arpitbhayani.me" target="_blank" rel="noopener" style="color:#1746d4; text-decoration:none;">arpitbhayani.me</a>
+    </div>
+    <script>
+        // Fetch ratings for all platforms
+        async function fetchAllRatings() {
+            // CodeChef rating
+            try {
+                const codechefResponse = await fetch("https://codechef-api.vercel.app/handle/taaham");
+                if (codechefResponse.ok) {
+                    const data = await codechefResponse.json();
+                    const currentRating = data.currentRating || "N/A";
+                    document.getElementById("codechef-rating").textContent = currentRating;
+                }
+            } catch (error) {
+                document.getElementById("codechef-rating").textContent = "N/A";
+            }
+
+            // Codeforces rating
+            try {
+                const codeforcesResponse = await fetch("https://codeforces.com/api/user.rating?handle=taahamultani");
+                if (codeforcesResponse.ok) {
+                    const data = await codeforcesResponse.json();
+                    if (data.status === "OK" && data.result.length > 0) {
+                        const currentRating = data.result[data.result.length - 1].newRating;
+                        document.getElementById("codeforces-rating").textContent = currentRating;
+                    }
+                }
+            } catch (error) {
+                document.getElementById("codeforces-rating").textContent = "N/A";
+            }
+
+            // LeetCode rating
+            try {
+                const leetcodeResponse = await fetch("https://leetcode.com/graphql", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "User-Agent": "Mozilla/5.0",
+                        "Referer": "https://leetcode.com/taahamultani/"
+                    },
+                    body: JSON.stringify({
+                        operationName: "getContestRankingData",
+                        variables: { username: "taahamultani" },
+                        query: `
+                            query getContestRankingData($username: String!) {
+                                userContestRanking(username: $username) {
+                                    rating
+                                }
+                            }
+                        `
+                    })
+                });
+                if (leetcodeResponse.ok) {
+                    const data = await leetcodeResponse.json();
+                    const rating = data.data?.userContestRanking?.rating;
+                    if (rating) {
+                        document.getElementById("leetcode-rating").textContent = Math.floor(rating);
+                    }
+                }
+            } catch (error) {
+                document.getElementById("leetcode-rating").textContent = "N/A";
+            }
+        }
+
+        // Call the function when the page loads
+        document.addEventListener("DOMContentLoaded", fetchAllRatings);
+
+        // Contact form validation and feedback
+        const form = document.getElementById("contactForm");
+        const formMessage = document.getElementById("formMessage");
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            // Simple error checking for empty fields
+            const nameInput = document.getElementById("name");
+            const emailInput = document.getElementById("email");
+            const messageInput = document.getElementById("message");
+            if (!nameInput || !emailInput || !messageInput) {
+                formMessage.textContent = "Form elements not found.";
+                return;
+            }
+            const name = nameInput.value.trim();
+            const email = emailInput.value.trim();
+            const message = messageInput.value.trim();
+            if (!name || !email || !message) {
+                formMessage.textContent = "Please fill in all fields.";
+                return;
+            }
+            // Email format validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                formMessage.textContent = "Please enter a valid email address.";
+                return;
+            }
+            // Simulate successful submission
+            formMessage.textContent = `Thank you, ${name}! Your message has been sent.`;
+            form.reset();
+        });
+    </script>
+</body>
+</html>
