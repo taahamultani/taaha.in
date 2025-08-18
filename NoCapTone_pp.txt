@@ -1,0 +1,37 @@
+Privacy Policy for NoCapTone
+
+Effective Date: 18th August
+
+At NoCapTone, we believe your words should sound cooler, not creepier. That means we respect your privacy and aren’t in the business of selling your secrets to shady data lords.
+
+Information We Collect
+- Text Input: The stuff you type in for conversion. We process it to give you the requested output. Unless you’re saving history (if/when that’s a feature), we don’t keep it.
+- Usage Data: Boring, non-personal things like device type, crash logs, and anonymous analytics so we can keep the app running instead of crashing every 5 minutes.
+- Account Info: If you create an account, we’ll have basic details like your email or username so you can actually log in.
+
+How We Use Your Information
+- To make your text sound like a corporate boss, a boomer, or uwu anime fan.
+- To improve the app and roll out cooler tones.
+- To troubleshoot issues and answer support requests.
+- To follow the law, because jail time isn’t part of our roadmap.
+- We do not sell or rent your data. Seriously, it’s not that interesting.
+
+Data Storage and Retention
+- Text inputs are generally processed on the fly and not stored.
+- If you sign up, your account info stays until you delete it or ghost us.
+- You can ask us to delete your data anytime.
+
+Third-Party Services
+- We may use third-party providers for hosting, analytics, and payments. They have their own privacy policies, but we try to only work with reputable ones (no sketchy basement operations).
+
+Your Rights
+- Depending on where you live, you might have rights to access, update, or delete your data. If you want us to delete something, just ask—we won’t make it weird.
+
+Security
+- We use reasonable measures to keep your info safe. That said, no app is 100% hack-proof, so maybe don’t paste your bank PIN here.
+
+Changes to This Policy
+- If we update this policy, we’ll post it here with a new effective date. No dramatic plot twists.
+
+Contact Us
+- Questions, complaints, or memes? Hit us up: tm@taaha.in
