@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#202124">
     <title>Taaha Multani</title>
     <style>
         /* Reset some default styles */
@@ -13,9 +15,10 @@
         }
         body {
             font-family: "Segoe UI", Arial, sans-serif;
-            background: #fafbfc;
-            color: #222;
+            background: #202124;
+            color: #e5e7eb;
             line-height: 1.6;
+            color-scheme: dark;
         }
         /* Sticky header styles */
         header {
@@ -23,8 +26,8 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: #fff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            background: #202124;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
             z-index: 1000;
         }
         .navbar {
@@ -38,17 +41,17 @@
         .navbar h1 {
             font-size: 1.7rem;
             font-weight: 700;
-            color: #2d3748;
+            color: #e5e7eb;
         }
         nav a {
-            color: #2d3748;
+            color: #cbd5e1;
             text-decoration: none;
             margin-left: 2rem;
             font-size: 1rem;
             transition: color 0.2s;
         }
         nav a:hover {
-            color: #3182ce;
+            color: #60a5fa;
         }
         main {
             max-width: 1400px; /* Wider layout */
@@ -60,7 +63,7 @@
         }
         h2 {
             font-size: 1.4rem;
-            color: #222;
+            color: #e5e7eb;
             margin-bottom: 1rem;
         }
         .about {
@@ -79,18 +82,18 @@
         }
         .projects-col h3 {
             font-size: 1.15rem;
-            color: #222;
+            color: #e5e7eb;
             margin-bottom: 0.3rem;
         }
         .projects-col .section-link {
-            color: #2b50a1;
+            color: #8ab4f8;
             text-decoration: none;
             font-size: 1rem;
             margin-left: 0.5rem;
             transition: color 0.2s;
         }
         .projects-col .section-link:hover {
-            color: #3182ce;
+            color: #60a5fa;
         }
         .projects-list, .papers-list {
             list-style: none;
@@ -101,19 +104,19 @@
             font-size: 1rem;
         }
         .projects-list li span.date {
-            color: #888;
+            color: #94a3b8;
             font-family: "Fira Mono", "Consolas", monospace;
             font-size: 0.98rem;
             margin-right: 0.5rem;
             letter-spacing: 0.03em;
         }
         .projects-list li a, .papers-list li a {
-            color: #1746d4;
+            color: #8ab4f8;
             text-decoration: none;
             transition: color 0.2s;
         }
         .projects-list li a:hover, .papers-list li a:hover {
-            color: #3182ce;
+            color: #60a5fa;
         }
         .contact-form {
             display: flex;
@@ -127,12 +130,14 @@
         .contact-form input, .contact-form textarea {
             padding: 0.5rem;
             margin-bottom: 1rem;
-            border: 1px solid #cbd5e1;
+            border: 1px solid #334155;
+            background: #0f172a;
+            color: #e5e7eb;
             border-radius: 4px;
             font-size: 1rem;
         }
         .contact-form button {
-            background: #3182ce;
+            background: #2563eb;
             color: #fff;
             border: none;
             padding: 0.7rem;
@@ -142,11 +147,11 @@
             transition: background 0.2s;
         }
         .contact-form button:hover {
-            background: #2563eb;
+            background: #1d4ed8;
         }
         .footer {
             text-align: center;
-            color: #888;
+            color: #94a3b8;
             font-size: 0.95rem;
             margin: 2rem 0 1rem 0;
         }
@@ -189,7 +194,7 @@
             font-style: italic;
             font-weight: 600;
             margin-bottom: 0.5rem;
-            color: #222;
+            color: #e5e7eb;
         }
         .about-subheading {
             font-size: 1.5rem;
@@ -204,7 +209,7 @@
             margin-bottom: 1.2rem;
         }
         .about-description a {
-            color: #1746d4;
+            color: #8ab4f8;
             text-decoration: none;
         }
         .about-description a:hover {
@@ -219,20 +224,20 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            border: 1.5px solid #bbb;
+            border: 1.5px solid #475569;
             border-radius: 8px;
             padding: 0.5rem 1.1rem;
-            background: #fff;
-            color: #222;
+            background: #111827;
+            color: #e5e7eb;
             font-size: 1.05rem;
             font-weight: 500;
             text-decoration: none;
             transition: border 0.2s, box-shadow 0.2s;
         }
         .about-social-btn:hover {
-            border: 1.5px solid #3182ce;
-            box-shadow: 0 2px 8px rgba(49,130,206,0.08);
-            color: #1746d4;
+            border: 1.5px solid #60a5fa;
+            box-shadow: 0 2px 8px rgba(96,165,250,0.15);
+            color: #8ab4f8;
         }
         .about-img-placeholder, .about-img {
             width: 460px;
@@ -242,13 +247,13 @@
             align-items: center;
             justify-content: center;
             font-size: 1.2rem;
-            color: #aaa;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            background: #f3f3f3;
+            color: #64748b;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            background: #0f172a;
             overflow: hidden;
         }
         .about-img {
-            background: #fff;
+            background: #0f172a;
             padding: 0;
         }
         .about-img img {
@@ -260,7 +265,7 @@
         }
         .header-hr {
             border: none;
-            border-top: 2px solid #e2e8f0;
+            border-top: 2px solid #1f2937;
             margin: 0;
             margin-bottom: 2.5rem;
         }
@@ -306,8 +311,8 @@
         <div class="navbar">
             <h1>Taaha Multani</h1>
             <nav>
+                <a href="https://chat.taaha.in">Chat with me</a>
                 <a href="#about">About</a>
-                <a href="#projects">Talks</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
@@ -323,15 +328,16 @@
                     <div class="about-heading">Hey, I am Taaha</div>
                     <div class="about-subheading">passionate, curious, and pragmatic</div>
                     <div class="about-description">
-                        I'm a software engineer who thrives on building scalable systems and simplifying complexity. At <a href="https://netcorecloud.com/">Netcore Cloud</a>, I'm currently modernizing legacy infrastructure to boost performance and resilience at scale.
+                        I'm a software engineer who's eager on building scalable systems and simplifying complexity. At <a href="https://netcorecloud.com/">Netcore Cloud</a>, I'm currently modernizing legacy infrastructure to boost performance and resilience at scale.
                         
                         <br> <br>
 
-                        I was one of the founding engineers of <a href="https://cascade.somaiya.edu/en/sustainability-project/2/">S.T.E.P.S</a>, a mobile platform for digitizing sugarcane plots in remote regions. I led end-to-end development — backend, frontend, database, and data systems — building robust, offline-first tools tailored for real-world field constraints.
-                        Previously, I freelanced for multiple clients — developing staggered algorithmic trading strategies, building a trading platform for a quant founder, and automating high-resolution data collection workflows for  <a href="www.5reels.com">5reels</a>, a content-driven startup. I also interned at  <a href="https://geniobits.com/">Genibits</a>, working on asynchronous background processing systems, and contributed to a maritime fuel optimization prototype at <a href="https://xtremetechnologies.in/">XtremeTechnologies</a>, projected to reduce fuel use by up to 40%.
+                        I was one of the founding engineers of <a href="https://cascade.somaiya.edu/en/sustainability-project/2/">S.T.E.P.S</a>, a mobile platform for digitizing sugarcane plots in remote regions. I led end-to-end development; backend, frontend, database, and data systems, building robust, offline-first tools tailored for real-world field constraints. <br>
+                        Previously, I freelanced for multiple clients — developing staggered algorithmic trading strategies, building a trading platform for a quant founder, and automating high-resolution data collection workflows for  <a href="www.5reels.com">5reels</a>, a content-driven startup. <br>
+                        I've interned at  <a href="https://geniobits.com/">Genibits</a>, working on asynchronous background processing systems, and contributed to a maritime fuel optimization prototype at <a href="https://xtremetechnologies.in/">XtremeTechnologies</a>, projected to reduce fuel use by up to 40%.
                         <br> <br>
                         I graduated in June 2024 with a B.Tech in Computer Science (CGPA 9.74/10), earning an Honors in AI/ML and a Minor in Cybersecurity.
-                        In my spare time, I’m building an automated highlight generator that uses OCR to spot peak gaming moments — a tool co-designed for Twitch streamers to make content creation effortless.
+                        In my spare time, I sometimes tinker and reinvent the wheel.
                         <!-- I also occasionally share thoughts and experiments on Medium. -->
                         
                         Always curious. Always building.
@@ -355,54 +361,18 @@
                 </div>
             </div>
         </section>
-        <!-- Projects Section -->
-        <section id="projects">
-            <div class="projects-columns">
-                <!-- Recent blog posts column -->
-                <div class="projects-col">
-                    <h2>Recent</h2>
-                    <div>Things I have done or shared recently.</div>
-                    <ul class="projects-list bulleted-list">
-                        
-                        <li><span class="date">Apr 07, 2025</span>: Made a MCP server  &middot; <a href="https://hub.docker.com/r/taaham/netcoreapi-mcp">NetcoreAPI-mcp</a></li>                       
 
-                        <li><span class="date">Jun 20, 2024</span>: Published App &middot; <a href="https://cascade.somaiya.edu/en/sustainability-project/2/">S.T.E.P.S</a></li>
-
-                        <li><span class="date">Dec 23, 2023</span>: Won hackathon (same place, again) &middot; <a href="https://www.linkedin.com/feed/update/urn:li:activity:7150127620653826048">Techfest 2023</a></li>
-                        <li><span class="date">Aug 20, 2023</span>: A happy client &middot; <a href="rl.jpg">Recieved Recommendation Letter</a></li>
-                        <li><span class="date">Apr 02, 2023</span>: Project &middot; <a href="https://devfolio.co/projects/nirbhaya&middot;be&middot;fearless&middot;34cc">Nirbhaya : Be Fearless</a></li>
-                        <li><span class="date">Feb 12, 2023</span>: Project &middot; <a href="https://github.com/viren-joshi/plant-it">Plant-it</a></li>
-                        <li><span class="date">Dec 18, 2022</span>: Won hackathon &middot; <a href="iitb-hackathon.png">Techfest 2022</a> &middot; <a href="https://github.com/taahamultani/APIGen">Github</a></li>
-                        <li><span class="date">Oct 23, 2021</span>: Organized an event &middot; <a href="https://codechef.com/TCDG2021">The Code Dungeon @Codechef</a></li>
-                        <li><span class="date">Jun 27, 2021</span>: Contest &middot; <a href="https://www.codechef.com/rankings/START5C?itemsPerPage=100&order=asc&page=1&search=taaha_m&sortBy=rank">Ranked 351 at Codechef's START5C</a></li>
-                    </ul>
-                </div>
-                <!-- Recent papers column -->
-                <!-- <div class="projects-col">
-                    <h2>Programming profiles</h2>
-                    <div>Links to my programming and coding profiles.</div>
-                    <ul class="papers-list bulleted-list">
-                        <li><a href="https://leetcode.com/u/taahamultani/" target="_blank" rel="noopener">Leetcode </a></li>
-                        <li><a href="https://www.codechef.com/users/taaham/" target="_blank" rel="noopener">Codechef </a></li>
-                        <li><a href="https://codeforces.com/profile/taahamultani" target="_blank" rel="noopener">Codeforces </a></li>
-                        <li><a href="https://www.hackerrank.com/profile/taahamultani" target="_blank" rel="noopener">Hackerrank </a></li>
-                        <li><a href="https://tryhackme.com/p/taahamultani" target="_blank" rel="noopener">Tryhackme</a></li>
-                        <li><a href="https://app.hackthebox.com/profile/2374330" target="_blank" rel="noopener">Hackthebox</a></li>
-                        
-                    </ul>
-                </div> -->
-            </div>
-        </section>
         <!-- Contact Section -->
         <section id="contact">
             <h2>Contact</h2>
             <div class="about-description">
-                Feel free to reach out to me at <a href="mailto:tm@taaha.in">tm@taaha.in</a>
+                Feel free to reach out to me at <a href="mailto:tm@taaha.in">tm@taaha.in</a> <br>
+                Alternatively, you can talk with my AI - <a href="https://chat.taaha.in">taahAI</a>
             </div>
         </section>
     </main>
     <div class="footer">
-        &copy; 2025 Taaha Multani. All rights reserved. &middot; No-fluff template inspiration: <a href="https://arpitbhayani.me" target="_blank" rel="noopener" style="color:#1746d4; text-decoration:none;">arpitbhayani.me</a>
+        &copy; 2025 Taaha Multani. All rights reserved.
     </div>
     <script>
         // Fetch ratings for all platforms
